@@ -1,4 +1,4 @@
-# SKT_Fly_Ai_4
+# SKT FlyAi 4
 
 코드 및 자료 공유 용도
 
