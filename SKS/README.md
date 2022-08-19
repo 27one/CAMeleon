@@ -2,7 +2,7 @@
 # Jetson	nano에서 실행하기
 • PyTorch 1.8.0 다운로드 및 dependency	설치
 
-%	wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl -O	torch- 1.8.0-cp36-cp36m-linux_aarch64.whl
+%	wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl -O	torch-1.8.0-cp36-cp36m-linux_aarch64.whl
 
 %	sudo apt-get	install	python3-pip	libopenblas-base	libopenmpi-dev
 
