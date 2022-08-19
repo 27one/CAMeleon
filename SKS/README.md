@@ -23,3 +23,26 @@
 %	export	BUILD_VERSION=0.9.0
 
 %	python3	setup.py install	--user
+
+# YOLO	v5	설치
+• YOLOv5	공식 레포지토리 복사
+
+%	git	clone	https://github.com/ultralytics/yolov5
+
+%	cd	yolov5
+
+• requirements.txt 에서 다음 내용 제거
+
+%	numpy>=1.18.5
+
+%	opencv-python>=4.1.2
+
+%	torch>=1.7.0
+
+%	torchvision>=0.8.1
+
+• requirements.txt 설치
+
+%	python3	-m	pip	install	--upgrade	pip
+
+%	python3	-m	pip	install	-r	requirements.txt
