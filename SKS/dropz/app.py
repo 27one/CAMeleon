@@ -4,7 +4,8 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, abort, \
     send_from_directory
 from werkzeug.utils import secure_filename
-
+#import time
+#import threading
 index_dict = {'person': 0, 'bicycle': 1, 'car': 2, 'motorcycle': 3, 'airplane': 4, 'bus': 5, 'train': 6, 'truck': 7,
               'boat': 8, 'traffic light': 9, 'fire hydrant': 10, 'stop sign': 11,
               'parking meter': 12, 'bench': 13, 'bird': 14, 'cat': 15, 'dog': 16, 'horse': 17, 'sheep': 18, 'cow': 19,
@@ -32,6 +33,12 @@ app.config['UPLOAD_PATH'] = 'uploads'
 #app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['OUTPUT_PATH'] = 'outputs'
 
+def video_remove(video_path):
+    if os.path.exists(video_path):
+        for file in os.scandir(video_path):
+            #threading.Timer(100, os.remove(file.path)).start()
+            os.remove(file.path)
+
 #비디오 변경시 필요없음
 def validate_image(stream):
     header = stream.read(512)
@@ -47,9 +54,6 @@ def too_large(e):
 
 @app.route('/')
 def index():
-    if os.path.exists(app.config['OUTPUT_PATH']):
-        for file in os.scandir(app.config['OUTPUT_PATH']):
-            os.remove(file.path)
     files = os.listdir(app.config['UPLOAD_PATH'])
     print(str(files))
 
@@ -65,7 +69,7 @@ def index():
 
 @app.route('/', methods=['POST'])
 def upload_files():
-    
+    video_remove(app.config['OUTPUT_PATH'])
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
     #filename = request.files.get('file', False)
@@ -108,9 +112,10 @@ def output_video():
         output = ''
 
     #files = os.listdir(app.config['UPLOAD_FOLDER'])
-    if os.path.exists(app.config['UPLOAD_PATH']):
-        for file in os.scandir(app.config['UPLOAD_PATH']):
-            os.remove(file.path)
+    video_remove(app.config['UPLOAD_PATH'])
+    #time.sleep(10)
+    #video_remove(app.config['OUTPUT_PATH'])
+    
     return render_template('result.html', output = output)
     #return redirect(url_for('outputs', output=output))
 
@@ -127,4 +132,4 @@ def display_video(filename):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=9900)
