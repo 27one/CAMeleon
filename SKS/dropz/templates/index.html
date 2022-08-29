@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
+  </head>
+  <body>
+    <h1>File Upload</h1>
+    <form action="{{ url_for('upload_files') }}" class="dropzone">
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
+    <button onClick="location.href='/'" >업로드</button>
+    {% if files %}
+      <div style="margin: 10px auto;">
+        <video autoplay="autoplay" controls="controls" preload="preload">
+          <source src="{{ url_for('upload', filename=files) }}" type="video/mp4"></source>
+        </video>
+      </div>
+      <form action="/result" method="post">
+        <input type="submit" ><br><br>
+        <select name="order">
+          {% for key in data %}
+            <option value={{key}}>{{key}}</option>
+          {% endfor %}
+        </select>
+        
+      </form>
+      <button onClick="location.href='/result'" >입력</button>
+    {% endif %}
+    
+    
+  </body>
+</html>
