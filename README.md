@@ -8,6 +8,10 @@
 2. git pull 이후 git push하기 (백업 문제 주의)
 3. 가능하면 README에서 설명해주기
 4. 업데이트할 때는 폴더에 따라 버전 나누기(백업용)
+* * *
+# CAMeleon
+
+<img src="https://user-images.githubusercontent.com/108257345/187815111-d309be48-e687-4320-b0ec-003401aaed6b.gif" width="330" height="230"><img src="https://user-images.githubusercontent.com/108257345/187815119-ad31fbcf-b896-4b7e-897d-c0278b4f1e1a.gif" width="330" height="230"><img src="https://user-images.githubusercontent.com/108257345/187815122-30a147a7-dbed-4df2-a46a-d5712133ae46.gif" width="330" height="230">
 
 ## Installation
 ```
@@ -21,14 +25,14 @@ $ git clone https://github.com/SKTFlyAi-4/Ambition4.git
 ```
 프로젝트가 위치하는 디렉토리로 이동하여 아래 코드를 실행
 ```
-pip install mxnet==1.7.0.post2
-pip install tensorflow==1.7.1
-pip install gluoncv==0.4.0
-pip install git+https://github.com/JiahuiYu/neuralgym
-pip install opencv-python==4.5.1.48
-pip install natsort==7.1.1
-pip install moviepy==1.0.3
-pip install speechRecognition==3.8.1
+$ pip install mxnet==1.7.0.post2
+$ pip install tensorflow==1.7.1
+$ pip install gluoncv==0.4.0
+$ pip install git+https://github.com/JiahuiYu/neuralgym
+$ pip install opencv-python==4.5.1.48
+$ pip install natsort==7.1.1
+$ pip install moviepy==1.0.3
+$ pip install speechRecognition==3.8.1
 ```
 마지막으로, [이 드라이브](https://drive.google.com/drive/folders/1y7Irxm3HSHGvp546hZdAZwuNmhLUVcjO)의 *snap-0.meta*와 *snap-0.data-00000-of-00001*을 **model_logs\release_places2_256**폴더로 다운로드
 
