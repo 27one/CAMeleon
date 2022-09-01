@@ -10,16 +10,15 @@
 4. 업데이트할 때는 폴더에 따라 버전 나누기(백업용)
 
 ## Installation
-이 프로젝트를 clone하고 새 Conda 환경 구축한 뒤, 아래 코드를 실행
 ```
 $ conda create <가상환경이름> python=3.6
 ```
 ```
 $ conda activate <가상환경이름>
 ```
-''`
-$ git clone 
-'''
+```
+$ git clone https://github.com/SKTFlyAi-4/Ambition4.git
+```
 프로젝트가 위치하는 디렉토리로 이동하여 아래 코드를 실행
 ```
 pip install mxnet==1.7.0.post2
@@ -36,6 +35,6 @@ pip install speechRecognition==3.8.1
 ## Usage
 구축한 Conda환경에 접속하여 프로젝트가 존재하는 디렉토리로 경로를 맞춰준 뒤, 아래 코드를 실행
 ```
-python app.py
+$ python app.py
 ```
 그리고 http://127.0.0.1:5000/ 으로 접속하면 서비스 이용 가능
