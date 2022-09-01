@@ -11,7 +11,7 @@
 * * *
 # CAMeleon
 
-<img src="https://user-images.githubusercontent.com/108257345/187815111-d309be48-e687-4320-b0ec-003401aaed6b.gif" width="300" height="200"><img src="https://user-images.githubusercontent.com/108257345/187815119-ad31fbcf-b896-4b7e-897d-c0278b4f1e1a.gif" width="300" height="200"><img src="https://user-images.githubusercontent.com/108257345/187815122-30a147a7-dbed-4df2-a46a-d5712133ae46.gif" width="300" height="200">
+<img src="https://user-images.githubusercontent.com/108257345/187815111-d309be48-e687-4320-b0ec-003401aaed6b.gif" width="250" height="150"><img src="https://user-images.githubusercontent.com/108257345/187815119-ad31fbcf-b896-4b7e-897d-c0278b4f1e1a.gif" width="250" height="150"><img src="https://user-images.githubusercontent.com/108257345/187815122-30a147a7-dbed-4df2-a46a-d5712133ae46.gif" width="250" height="150">
 
 ## Installation
 ```
