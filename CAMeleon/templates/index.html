@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>CAMeleon</title>
+    <link href="static/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(document).ready(function() {
+      $('#loading').hide();
+      $('#trans').submit(function(){
+          $('#loading').show();
+          return true;
+          });
+      });
+    </script>
+    <style>
+      /* page-loading */
+    #loading {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        display: block;
+        opacity: 0.6;
+        background: #e4e4e4;
+        z-index: 99;
+        text-align: center;
+    }
+    #loading > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 100;
+    }
+    #loading > p {
+          position: absolute;
+          top: 57%;
+          left: 43%;
+          z-index: 101;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="loading" style="margin-left: 0px;">
+      <img src="../static/images/loading.gif">
+    </div>
+    <div class="container">
+        <div class="navbar">
+            <img src="static/images/logo_main1.png" class="logo">
+                <nav>
+                    <ul>
+                      <li><a href="https://www.youtube.com/"><img src="static/images/yt1.png"></a></li>
+                      <li><a href="https://www.facebook.com/"><img src="static/images/fb1.png"></a></li>
+                      <li><a href="https://www.instagram.com/"><img src="static/images/ig.png"></a></li>
+                    </ul>
+                </nav>
+        </div>
+        <div class="row">
+            <div class="title">
+                <img src="static/images/logo_title.png" class="cameleon">
+                <table>
+                  <tr>
+                    <td><img src="static/images/sample1.gif" height="300px"/></td>
+                    <td><img src="static/images/sample2.gif" height="300px"/></td>
+                    <td><img src="static/images/sample3.gif" height="300px"/></td>
+                  <tr>
+                </table>
+            </div>
+            <div class="dragger_wrapper">
+                <div class="icon"><i class="fa-solid fa-video-plus"></i></div>
+                <div class="dragger">
+                    <form action="{{ url_for('upload_files') }}" class="dropzone"></form>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
+                </div> 
+                <h2>Drop files here to upload</h2>
+                    <button onClick="location.href='/'" >Upload</button>
+            </div>
+            {% if files %}
+            <link href="static/style.css" rel="stylesheet" type="text/css"/>
+           <div class="title2">
+                <img src="static/images/selectplaytitle.png" class="selectplaytitle">
+            </div>
+             <div class="option">
+                <form action="/result" method="post" id="trans">
+                    <select name="order">
+                    {% for key in data %}
+                        <option class="optionList" value={{key}}>{{key}}</option>
+                    {% endfor %}
+                    <br><br><input type="submit" id="input_submit" value="Submit">
+                    </select>
+                </form>
+            </div>
+            <div class="videowrap" align="center">
+                <video autoplay="autoplay" id="v1" style="width: 100%; " controls="controls" preload="preload" height="700">
+                  <source src="{{ url_for('upload', filename=files) }}" type="video/mp4">
+                </video>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+  </body>
+</html>
